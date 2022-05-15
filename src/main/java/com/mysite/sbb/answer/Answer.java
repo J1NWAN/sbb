@@ -1,6 +1,7 @@
 package com.mysite.sbb.answer;
 
 import com.mysite.sbb.question.Question;
+import com.mysite.sbb.user.SiteUser;
 import lombok.Getter;
 import lombok.Setter;
 import org.springframework.data.annotation.CreatedDate;
@@ -27,4 +28,7 @@ public class Answer {
     // 질문이 많고 답변이 1건일 경우 (N:1 관계)
     @ManyToOne
     private Question question;
+
+    @ManyToOne
+    private SiteUser author;
 }
