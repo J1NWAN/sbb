@@ -27,6 +27,8 @@ public class Question {
 
     private LocalDateTime createDate;
 
+    private LocalDateTime modifyDate;
+
     /**
      * 한 질문에 여러 답변인 경우 (1:N 관계)
      * 한 질문에 여러 답변이 작성될 때 이 질문을 삭제시 모든 답변을 삭제하기 위해 속성으로 cascade = CascadeType.REMOVE를 준다
