@@ -2,6 +2,7 @@ package com.mysite.sbb.question;
 
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
+import org.springframework.data.jpa.domain.Specification;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;
@@ -19,4 +20,7 @@ public interface QuestionRepository extends JpaRepository<Question, Integer> {
 
     // 모든 질문을 조회
     Page<Question> findAll(Pageable pageable);
+
+    // 모든 질문 검색 기능
+    Page<Question> findAll(Specification<Question> spec, Pageable pageable);
 }
