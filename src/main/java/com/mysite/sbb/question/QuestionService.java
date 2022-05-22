@@ -62,7 +62,21 @@ public class QuestionService {
         this.questionRepository.save(question);
     }
 
+    /**
+     * 질문 삭제 메소드
+     * @param question
+     */
     public void delete(Question question) {
         this.questionRepository.delete(question);
+    }
+
+    /**
+     * 추천인 저장 메소드
+     * @param question
+     * @param siteUser
+     */
+    public void vote(Question question, SiteUser siteUser) {
+        question.getVoter().add(siteUser);
+        this.questionRepository.save(question);
     }
 }
